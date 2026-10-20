@@ -1,3 +1,5 @@
+package clase;
+
 public class Author {
     private String name;
 

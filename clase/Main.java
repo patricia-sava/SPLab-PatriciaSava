@@ -1,3 +1,5 @@
+package clase;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         Section cap1 = new Section("Capitolul 1");
@@ -10,7 +12,7 @@ public class Main {
         Paragraph p4 = new Paragraph("Paragraph 4");
         cap1.add(p4);
 
-        //ără aliniere
+        //fără aliniere
         System.out.println("Printing without Alignment");
         System.out.println();
         cap1.print();

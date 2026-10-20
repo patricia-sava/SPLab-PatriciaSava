@@ -1,3 +1,5 @@
+package clase;
+
 public class TableOfContents implements Element {
     private String something;
 

@@ -1,3 +1,5 @@
+package clase;
+
 public class Image implements Element {
     private String url;
 

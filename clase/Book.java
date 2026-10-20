@@ -1,10 +1,13 @@
+package clase;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Book {
     private String title;
     private List<Author> authors = new ArrayList<>();
-    private List<Element> elements = new ArrayList<>();
+    private List<clase.Element> elements = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -14,7 +17,7 @@ public class Book {
         authors.add(author);
     }
 
-    public void addContent(Element element) {
+    public void addContent(clase.Element element) {
         elements.add(element);
     }
 
@@ -25,7 +28,7 @@ public class Book {
             author.print();
         }
         System.out.println("\nContent:");
-        for (Element element : elements) {
+        for (clase.Element element : elements) {
             element.print();
         }
     }

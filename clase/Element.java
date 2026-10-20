@@ -1,3 +1,5 @@
+package clase;
+
 public interface Element {
     void print();
     void add(Element element);

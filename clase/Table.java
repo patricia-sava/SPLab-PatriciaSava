@@ -1,3 +1,5 @@
+package clase;
+
 public class Table implements Element {
     private String something;
 

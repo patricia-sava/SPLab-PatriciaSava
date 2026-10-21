@@ -1,29 +1,44 @@
+package clase;
+
 public class Paragraph implements Element {
     private String text;
-    private AlignStrategy textAlignment;
+    private AlignStrategy alignStrategy;
 
     public Paragraph(String text) {
         this.text = text;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setAlignStrategy(AlignStrategy textAlignment) {
-        this.textAlignment = textAlignment;
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
+        this.alignStrategy = alignStrategy;
     }
 
     @Override
     public void print() {
-        if (textAlignment != null) {
-            textAlignment.render(this, null);
+        if (alignStrategy != null) {
+            alignStrategy.render(text);
         } else {
-            System.out.println("Paragraph: " + text);
+            System.out.println(text);
         }
     }
 
-    @Override public void add(Element element) {}
-    @Override public void remove(Element element) {}
-    @Override public Element get(int index) { return null; }
+
+    @Override
+    public void add(Element element) {
+        // Un paragraf nu poate contine alte elemente
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int index) {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+    }
 }

@@ -1,3 +1,5 @@
+package clase;
+
 public interface AlignStrategy {
-    void render(Paragraph paragraph, String context);
+    void render(String text);
 }

@@ -1,3 +1,5 @@
+package clase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,5 +32,13 @@ public class Section implements Element {
     @Override
     public Element get(int index) {
         return children.get(index);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+        for (Element child : children) { // sau lista ta de elemente din Section
+            child.accept(visitor);
+        }
     }
 }

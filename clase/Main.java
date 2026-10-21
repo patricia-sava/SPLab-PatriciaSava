@@ -26,5 +26,21 @@ public class Main {
         System.out.println("Printing with Alignment");
         System.out.println();
         cap1.print();
+
+
+
+        System.out.println();
+        System.out.println("Printing Book Statistics (Visitor)");
+
+
+        cap1.add(new ImageProxy("ImageOne"));
+        cap1.add(new Image("ImageTwo"));
+        cap1.add(new Paragraph("Some text"));
+        cap1.add(new Table("Table 1"));
+
+        // Calculăm și afișăm statisticile
+        BookStatistics stats = new BookStatistics();
+        cap1.accept(stats);
+        stats.printStatistics();
     }
 }

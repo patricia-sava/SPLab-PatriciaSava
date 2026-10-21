@@ -32,4 +32,11 @@ public class Book {
             element.print();
         }
     }
+
+    public void accept(Visitor visitor) {
+        visitor.visitBook(this);
+        for (Element element : elements) {
+            element.accept(visitor);
+        }
+    }
 }

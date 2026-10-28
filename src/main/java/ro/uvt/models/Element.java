@@ -1,4 +1,5 @@
-package clase;
+package ro.uvt.models;
+import ro.uvt.services.Visitor;
 
 public interface Element {
     void print();

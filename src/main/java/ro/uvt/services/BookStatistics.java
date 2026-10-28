@@ -1,4 +1,5 @@
-package clase;
+package ro.uvt.services;
+import ro.uvt.models.*;
 
 public class BookStatistics implements Visitor {
     private int numberOfParagraphs = 0;

@@ -1,15 +1,16 @@
-package clase;
+package ro.uvt.models;
+import ro.uvt.services.Visitor;
 
-public class TableOfContents implements Element {
+public class Table implements Element {
     private String something;
 
-    public TableOfContents(String something) {
+    public Table(String something) {
         this.something = something;
     }
 
     @Override
     public void print() {
-        System.out.println("Table of Contents: " + something);
+        System.out.println("Table: " + something);
     }
 
     @Override public void add(Element element) {}
@@ -18,6 +19,6 @@ public class TableOfContents implements Element {
 
     @Override
     public void accept(Visitor visitor) {
-        visitor.visitTableOfContents(this);
+        visitor.visitTable(this);
     }
 }

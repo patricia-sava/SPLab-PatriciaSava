@@ -1,4 +1,4 @@
-package clase;
+package ro.uvt.models;
 
 public class Author {
     private String name;

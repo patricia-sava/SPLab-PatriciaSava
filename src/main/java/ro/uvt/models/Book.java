@@ -1,13 +1,13 @@
-package clase;
+package ro.uvt.models;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import ro.uvt.services.Visitor;
 
 public class Book {
     private String title;
     private List<Author> authors = new ArrayList<>();
-    private List<clase.Element> elements = new ArrayList<>();
+    private List<Element> elements = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -17,7 +17,7 @@ public class Book {
         authors.add(author);
     }
 
-    public void addContent(clase.Element element) {
+    public void addContent(Element element) {
         elements.add(element);
     }
 
@@ -28,7 +28,7 @@ public class Book {
             author.print();
         }
         System.out.println("\nContent:");
-        for (clase.Element element : elements) {
+        for (Element element : elements) {
             element.print();
         }
     }

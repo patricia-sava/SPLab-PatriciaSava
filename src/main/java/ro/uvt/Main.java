@@ -1,4 +1,6 @@
-package clase;
+package ro.uvt;
+import ro.uvt.models.*;
+import ro.uvt.services.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {

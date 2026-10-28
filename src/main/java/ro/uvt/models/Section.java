@@ -1,4 +1,5 @@
-package clase;
+package ro.uvt.models;
+import ro.uvt.services.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;

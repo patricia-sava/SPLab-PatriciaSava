@@ -36,10 +36,9 @@ public class BooksController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createBook(@RequestBody Book book) {
-        asyncExecutor.executeCommand(new CreateBookCommand(booksService, book));
-        return ResponseEntity.status(HttpStatus.ACCEPTED)
-                .body("Request accepted for processing. Book creation in progress.");
+    public ResponseEntity<Book> createBook(@RequestBody Book book) {
+        Book savedBook = syncExecutor.executeCommand(new CreateBookCommand(booksService, book));
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedBook);
     }
 
     @PutMapping("/{id}")

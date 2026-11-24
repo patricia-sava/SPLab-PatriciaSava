@@ -1,11 +1,28 @@
 package ro.uvt.models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
 import ro.uvt.services.Visitor;
 
-public class Paragraph implements Element {
+@Entity
+public class Paragraph extends BaseElement {
     private String text;
+
+    @Transient
     private AlignStrategy alignStrategy;
 
+    public Paragraph() {
+    }
+
     public Paragraph(String text) {
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
         this.text = text;
     }
 
@@ -22,7 +39,6 @@ public class Paragraph implements Element {
         }
     }
 
-
     @Override
     public void add(Element element) {
         // Un paragraf nu poate contine alte elemente
@@ -30,7 +46,6 @@ public class Paragraph implements Element {
 
     @Override
     public void remove(Element element) {
-
     }
 
     @Override

@@ -1,15 +1,41 @@
 package ro.uvt.models;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import ro.uvt.services.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element {
+@Entity
+public class Section extends BaseElement {
     private String title;
+
+    @OneToMany(targetEntity = BaseElement.class, cascade = CascadeType.ALL)
     private List<Element> children = new ArrayList<>();
+
+    public Section() {
+    }
 
     public Section(String title) {
         this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<Element> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Element> children) {
+        this.children = children;
     }
 
     @Override
@@ -38,7 +64,7 @@ public class Section implements Element {
     @Override
     public void accept(Visitor visitor) {
         visitor.visitSection(this);
-        for (Element child : children) { // sau lista ta de elemente din Section
+        for (Element child : children) {
             child.accept(visitor);
         }
     }

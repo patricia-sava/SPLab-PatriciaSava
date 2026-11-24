@@ -1,10 +1,25 @@
 package ro.uvt.models;
+
+import jakarta.persistence.Entity;
 import ro.uvt.services.Visitor;
 
-public class Table implements Element {
+@Entity
+@jakarta.persistence.Table(name = "book_tables")
+public class Table extends BaseElement {
     private String something;
 
+    public Table() {
+    }
+
     public Table(String something) {
+        this.something = something;
+    }
+
+    public String getSomething() {
+        return something;
+    }
+
+    public void setSomething(String something) {
         this.something = something;
     }
 
